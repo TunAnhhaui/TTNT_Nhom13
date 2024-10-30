@@ -1,0 +1,60 @@
+#side_anker {
+    -fx-background-color: #353A56;          /* Background color */
+    -fx-border-width: 2px;                  /* Border width on all sides */
+    -fx-border-radius: 20px;                /* Rounded corners for the border */
+    -fx-background-radius: 20px;            /* Rounded corners for the background */
+    -fx-border-color: white;                /* Border color */
+    -fx-border-style: solid;                /* Border style */
+}
+
+#side_root {
+    -fx-background-color: #DDDDDD;          /* Background color */
+    -fx-border-width: 2px;                  /* Border width on all sides */
+    -fx-border-radius: 20px;                /* Rounded corners for the border */
+    -fx-background-radius: 20px;            /* Rounded corners for the background */
+    -fx-border-color: white;                /* Border color */
+    -fx-border-style: solid;                /* Border style */
+}
+
+#root {
+    -fx-background-color: #DDDDDD;          /* Background color */
+    -fx-border-width: 2px;                  /* Border width on all sides */
+    -fx-border-radius: 20px;                /* Rounded corners for the border */
+    -fx-background-radius: 20px;            /* Rounded corners for the background */
+    -fx-border-color: white;                /* Border color */
+    -fx-border-style: solid;                /* Border style */
+}
+
+#pane_image{
+    -fx-background-color: #6699FF;
+    -fx-border-width: 2px;                  /* Border width on all sides */
+    -fx-border-radius: 20px;                /* Rounded corners for the border */
+    -fx-background-radius: 20px;            /* Rounded corners for the background */
+    -fx-border-style: solid;
+}
+.displayPane{
+    -fx-background-color: #33CCFF;
+    -fx-border-width: 2px;
+    -fx-border-radius: 20px;
+    -fx-border-style: solid;
+}
+#main{
+    -fx-border-width: 2px;
+    -fx-border-radius: 20px;
+    -fx-border-style: solid;
+}
+
+.btn2{
+    -fx-background-color:  #66CCFF;    /* Màu nền */
+    -fx-text-fill: white;             /* Màu chữ */
+    -fx-background-radius: 50px;      /* Độ bo tròn (càng lớn, nút càng tròn) */
+    -fx-padding: 10px 20px;           /* Khoảng cách padding cho nút */
+    -fx-border-radius: 50px;          /* Bo tròn cho viền nếu có */
+    -fx-border-width: 2px;
+}
+
+.pane2{
+    -fx-background-color:
+            #CCCCCC;
+    -fx-background-radius: 30px;
+}
