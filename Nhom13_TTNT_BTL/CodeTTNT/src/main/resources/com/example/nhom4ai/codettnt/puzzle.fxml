@@ -1,23 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.canvas.Canvas?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ProgressBar?>
-<?import javafx.scene.control.RadioMenuItem?>
-<?import javafx.scene.control.SplitMenuButton?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<?import javafx.scene.control.ToggleGroup?>
-<?import javafx.scene.image.Image?>
-<HBox fx:id="root" onKeyPressed="#onKeyPressed" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="850.0" prefWidth="1200.0" styleClass="root" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.nhom4ai.codettnt.PuzzleController">
+<HBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#onKeyPressed" prefHeight="850.0" prefWidth="1200.0" styleClass="root" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.nhom4ai.codettnt.PuzzleController">
    <children>
       <!-- Sidebar chứa các nút và menu -->
       <VBox prefHeight="846.0" prefWidth="500.0">
@@ -88,7 +78,7 @@
             <!-- Display Pane chứa Canvas để hiển thị trò chơi -->
             <AnchorPane fx:id="displayPane" prefHeight="600.0" prefWidth="760.0" styleClass="displayPane" stylesheets="@style.css">
                <children>
-                  <Canvas fx:id="imgCanvas" layoutX="105.0" layoutY="25.0" width="550.0" height="550.0" onMouseClicked="#onMouseClicked" />
+                  <Canvas fx:id="imgCanvas" height="550.0" layoutX="105.0" layoutY="25.0" onMouseClicked="#onMouseClicked" width="550.0" />
                </children>
             </AnchorPane>
 
@@ -128,8 +118,10 @@
                            <font>
                               <Font size="26.0" />
                            </font>
+                           <padding>
+                              <Insets left="30.0" />
+                           </padding>
                         </Label>
-                        <Button layoutX="134.0" layoutY="2.0" onAction="#startTimer" text="Start Timer" />
                         <TextField fx:id="stepField" alignment="CENTER" layoutX="51.0" layoutY="83.0" prefHeight="47.0" prefWidth="120.0" text="0">
                            <font>
                               <Font size="22.0" />

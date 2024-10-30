@@ -214,18 +214,21 @@ public class PuzzleController implements Initializable, Runnable {
         });
     }
 
+
+//Giai thuat A*
     // Giải quyết bài toán bằng thuật toán A*
     public void solveAStar() {
         thuatToanAStar = new ThuatToanAStar();
-        thuatToanAStar.startNode = new Node(state, 0);
+        thuatToanAStar.startNode = new Node(state, 0); //Ham ban dau voi chi phí ban đầu là 0.
         thuatToanAStar.goalNode = new Node(goalState, 1);
         thuatToanAStar.solve();
         result = thuatToanAStar.RESULT;
-        approvedNodes = thuatToanAStar.approvedNodes;
+        approvedNodes = thuatToanAStar.approvedNodes; //Ghi nhận số node đã được duyệt trong quá trình tìm kiếm.
         totalNodes = thuatToanAStar.totalNodes;
         aiTime = thuatToanAStar.time;
         error = thuatToanAStar.error;
     }
+//
 
     @FXML
     protected void onCompareClick() {
@@ -387,10 +390,10 @@ public class PuzzleController implements Initializable, Runnable {
 
             int[] tmpValue = Arrays.copyOf(value, size * size);
             switch (ke.getCode()) {
-                case S -> state.UP();
-                case D -> state.LEFT();
-                case W -> state.DOWN();
-                case A -> state.RIGHT();
+                case W -> state.UP();
+                case A -> state.LEFT();
+                case S -> state.DOWN();
+                case D -> state.RIGHT();
                 default -> value = tmpValue;
             }
             countStep++;

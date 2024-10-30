@@ -21,22 +21,22 @@ public class ThuatToanAStar {
 
     //Hàm khởi tạo
     public ThuatToanAStar() {
-        FRINGE = new Vector<>();
-        CHILD = new Vector<>();
-        CLOSED = new Vector<>();
-        RESULT = new Vector<>();
+        FRINGE = new Vector<>(); //các node chờ được duyệt
+        CHILD = new Vector<>(); //Lưu node con của node hiện tại trước khi thêm vào FRINGE
+        CLOSED = new Vector<>(); //các node đã được duyệt, tránh duyệt lại.
+        RESULT = new Vector<>(); //Lưu chuỗi trạng thái từ startNode đến goalNode khi tìm thấy lời giải.
     }
 
     public void solve() {
         RESULT.clear();
         long startTime = System.currentTimeMillis();
-        startNode.f = startNode.h = startNode.estimate(goalNode.state);
-        startNode.g = 0;
+        startNode.f = startNode.h = startNode.estimate(goalNode.state); //Giá trị heuristic ước tính từ startNode đến goalNode
+        startNode.g = 0; // Chi phí từ điểm bắt đầu.
         totalNodes = approvedNodes = 0;
         FRINGE.add(startNode);
         while (!FRINGE.isEmpty()) {
-            // Điều kiện dừng thuật toán
-            if (System.currentTimeMillis() - startTime > 60000) {
+            // Điều kiện dừng thuật toán. TT dung khi duyet qua 30s
+            if (System.currentTimeMillis() - startTime > 30000) {
                 error = "Thuật toán quá tốn thời gian!";
                 approvedNodes = Integer.MAX_VALUE;
                 FRINGE.clear();
@@ -56,7 +56,7 @@ public class ThuatToanAStar {
             for (Node node : FRINGE) {
                 if (node.f < fMin) {
                     fMin = node.f;
-                    currentNode = node;
+                    currentNode = node; //currentNode: node mà thuật toán đang xử lý tại một thời điểm nhất định.
                 }
             }
             FRINGE.removeElement(currentNode);
@@ -72,7 +72,9 @@ public class ThuatToanAStar {
                 return;
             }
             // Thiết lập các node con
-            CHILD = currentNode.successors();
+            CHILD = currentNode.successors(); //tạo danh sách các node con
+            //Loại bỏ node con nào giống với parent của currentNode.
+            //Loại bỏ node nào đã được duyệt (có trong CLOSED).
             if (currentNode.parent != null) {
                 for (int i = 0; i < CHILD.size(); i++) {
                     Node child = CHILD.get(i);
@@ -110,7 +112,7 @@ public class ThuatToanAStar {
     }
     // Truy vết kết quả
     public void addResult(Node n) {
-        if(n.parent!=null) {
+        if(n.parent!=null) { //Khong phai startNode
             addResult(n.parent);
         }
         RESULT.add(n.state.value);
